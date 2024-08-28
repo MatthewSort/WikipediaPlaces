@@ -16,7 +16,7 @@ struct WikipediaPlacesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchPlacesView()
         }
     }
     

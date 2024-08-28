@@ -14,7 +14,6 @@
 		4981D4702C7F4B94002BE9DF /* WikipediaPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D46F2C7F4B94002BE9DF /* WikipediaPlacesTests.swift */; };
 		4981D47A2C7F4B94002BE9DF /* WikipediaPlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4792C7F4B94002BE9DF /* WikipediaPlacesUITests.swift */; };
 		4981D47C2C7F4B94002BE9DF /* WikipediaPlacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D47B2C7F4B94002BE9DF /* WikipediaPlacesUITestsLaunchTests.swift */; };
-		4981D4892C7F52F5002BE9DF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4981D4882C7F52F5002BE9DF /* Colors.xcassets */; };
 		4981D48D2C7F5457002BE9DF /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4981D48C2C7F5457002BE9DF /* Development.xcconfig */; };
 		4981D48F2C7F5463002BE9DF /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4981D48E2C7F5463002BE9DF /* Production.xcconfig */; };
 		4981D4922C7F5765002BE9DF /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4912C7F5765002BE9DF /* Configuration.swift */; };
@@ -38,6 +37,8 @@
 		4981D4D02C7F93B5002BE9DF /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4CF2C7F93B5002BE9DF /* ServiceContainer.swift */; };
 		4981D4D22C7F941D002BE9DF /* ServicePropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4D12C7F941D002BE9DF /* ServicePropertyWrapper.swift */; };
 		4981D4D52C7F95B8002BE9DF /* SearchPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4D42C7F95B8002BE9DF /* SearchPlacesViewModel.swift */; };
+		4981D4D82C7FA14E002BE9DF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4D72C7FA14E002BE9DF /* LoadingView.swift */; };
+		4981D4DC2C7FA190002BE9DF /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4DB2C7FA190002BE9DF /* PlaceholderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,6 @@
 		4981D4752C7F4B94002BE9DF /* WikipediaPlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikipediaPlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4981D4792C7F4B94002BE9DF /* WikipediaPlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaPlacesUITests.swift; sourceTree = "<group>"; };
 		4981D47B2C7F4B94002BE9DF /* WikipediaPlacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaPlacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4981D4882C7F52F5002BE9DF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		4981D48C2C7F5457002BE9DF /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		4981D48E2C7F5463002BE9DF /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		4981D4902C7F5706002BE9DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +93,8 @@
 		4981D4CF2C7F93B5002BE9DF /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		4981D4D12C7F941D002BE9DF /* ServicePropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePropertyWrapper.swift; sourceTree = "<group>"; };
 		4981D4D42C7F95B8002BE9DF /* SearchPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewModel.swift; sourceTree = "<group>"; };
+		4981D4D72C7FA14E002BE9DF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4981D4DB2C7FA190002BE9DF /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +153,6 @@
 				4981D4942C7F5C58002BE9DF /* Sections */,
 				4981D45E2C7F4B93002BE9DF /* WikipediaPlacesApp.swift */,
 				4981D4622C7F4B94002BE9DF /* Assets.xcassets */,
-				4981D4882C7F52F5002BE9DF /* Colors.xcassets */,
 				4981D4642C7F4B94002BE9DF /* Preview Content */,
 			);
 			path = WikipediaPlaces;
@@ -211,6 +212,7 @@
 		4981D4942C7F5C58002BE9DF /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				4981D4D62C7FA145002BE9DF /* CommonUI */,
 				4981D4D32C7F9595002BE9DF /* SearchPlaces */,
 			);
 			path = Sections;
@@ -345,6 +347,15 @@
 			path = SearchPlaces;
 			sourceTree = "<group>";
 		};
+		4981D4D62C7FA145002BE9DF /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				4981D4D72C7FA14E002BE9DF /* LoadingView.swift */,
+				4981D4DB2C7FA190002BE9DF /* PlaceholderView.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,7 +460,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4981D4892C7F52F5002BE9DF /* Colors.xcassets in Resources */,
 				4981D48F2C7F5463002BE9DF /* Production.xcconfig in Resources */,
 				4981D4662C7F4B94002BE9DF /* Preview Assets.xcassets in Resources */,
 				4981D48D2C7F5457002BE9DF /* Development.xcconfig in Resources */,
@@ -478,11 +488,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4981D4DC2C7FA190002BE9DF /* PlaceholderView.swift in Sources */,
 				4981D4AE2C7F60D8002BE9DF /* BaseDomains.swift in Sources */,
 				4981D4BF2C7F6449002BE9DF /* Places.swift in Sources */,
 				4981D49C2C7F5CF4002BE9DF /* APIResourceParameters.swift in Sources */,
 				4981D4C92C7F6876002BE9DF /* DecodingStrategy.swift in Sources */,
 				4981D4A92C7F5ECD002BE9DF /* CustomCache.swift in Sources */,
+				4981D4D82C7FA14E002BE9DF /* LoadingView.swift in Sources */,
 				4981D4922C7F5765002BE9DF /* Configuration.swift in Sources */,
 				4981D4B82C7F6226002BE9DF /* EndpointURLProvider.swift in Sources */,
 				4981D4612C7F4B93002BE9DF /* SearchPlacesView.swift in Sources */,
@@ -674,6 +686,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -706,6 +719,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
