@@ -1,0 +1,12 @@
+//
+//  Development.xcconfig
+//  WikipediaPlaces
+//
+//  Created by Mattia Capasso on 28/08/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL_PLACES = https:/$()/raw.githubusercontent.com/abnamrocoesd/assignment-ios/main/locations.json
+SCHEMA_URL_WIKIPEDIA = wikipedia:/$()/places?WMFArticleURL=https:/$()/en.wikipedia.org/wiki/
