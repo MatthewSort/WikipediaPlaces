@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct WikipediaPlacesApp: App {
+    
+    init() {
+        setupDependencyContainer()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+    }
+    
+    private func setupDependencyContainer() {
+        ServiceContainer.register(type: PlacesServing.self, PlacesService())
     }
 }
