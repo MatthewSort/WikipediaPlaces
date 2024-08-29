@@ -39,6 +39,9 @@
 		4981D4D52C7F95B8002BE9DF /* SearchPlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4D42C7F95B8002BE9DF /* SearchPlacesViewModel.swift */; };
 		4981D4D82C7FA14E002BE9DF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4D72C7FA14E002BE9DF /* LoadingView.swift */; };
 		4981D4DC2C7FA190002BE9DF /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981D4DB2C7FA190002BE9DF /* PlaceholderView.swift */; };
+		4981DF582C80A78B002BE9DF /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981DF572C80A78B002BE9DF /* CustomAlert.swift */; };
+		4981DF5A2C80AB86002BE9DF /* PlacesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981DF592C80AB86002BE9DF /* PlacesList.swift */; };
+		4981DF5D2C80AC9F002BE9DF /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981DF5C2C80AC9F002BE9DF /* SearchButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,9 @@
 		4981D4D42C7F95B8002BE9DF /* SearchPlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlacesViewModel.swift; sourceTree = "<group>"; };
 		4981D4D72C7FA14E002BE9DF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4981D4DB2C7FA190002BE9DF /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		4981DF572C80A78B002BE9DF /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
+		4981DF592C80AB86002BE9DF /* PlacesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesList.swift; sourceTree = "<group>"; };
+		4981DF5C2C80AC9F002BE9DF /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +347,7 @@
 		4981D4D32C7F9595002BE9DF /* SearchPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				4981DF5B2C80AB8D002BE9DF /* Subviews */,
 				4981D4602C7F4B93002BE9DF /* SearchPlacesView.swift */,
 				4981D4D42C7F95B8002BE9DF /* SearchPlacesViewModel.swift */,
 			);
@@ -352,8 +359,18 @@
 			children = (
 				4981D4D72C7FA14E002BE9DF /* LoadingView.swift */,
 				4981D4DB2C7FA190002BE9DF /* PlaceholderView.swift */,
+				4981DF572C80A78B002BE9DF /* CustomAlert.swift */,
 			);
 			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		4981DF5B2C80AB8D002BE9DF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				4981DF592C80AB86002BE9DF /* PlacesList.swift */,
+				4981DF5C2C80AC9F002BE9DF /* SearchButton.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,8 +509,10 @@
 				4981D4AE2C7F60D8002BE9DF /* BaseDomains.swift in Sources */,
 				4981D4BF2C7F6449002BE9DF /* Places.swift in Sources */,
 				4981D49C2C7F5CF4002BE9DF /* APIResourceParameters.swift in Sources */,
+				4981DF5A2C80AB86002BE9DF /* PlacesList.swift in Sources */,
 				4981D4C92C7F6876002BE9DF /* DecodingStrategy.swift in Sources */,
 				4981D4A92C7F5ECD002BE9DF /* CustomCache.swift in Sources */,
+				4981DF5D2C80AC9F002BE9DF /* SearchButton.swift in Sources */,
 				4981D4D82C7FA14E002BE9DF /* LoadingView.swift in Sources */,
 				4981D4922C7F5765002BE9DF /* Configuration.swift in Sources */,
 				4981D4B82C7F6226002BE9DF /* EndpointURLProvider.swift in Sources */,
@@ -511,6 +530,7 @@
 				4981D4C42C7F6630002BE9DF /* PlacesService.swift in Sources */,
 				4981D4B62C7F6184002BE9DF /* RequestProvider.swift in Sources */,
 				4981D45F2C7F4B93002BE9DF /* WikipediaPlacesApp.swift in Sources */,
+				4981DF582C80A78B002BE9DF /* CustomAlert.swift in Sources */,
 				4981D4B32C7F6156002BE9DF /* NetworkManagerStatusCode.swift in Sources */,
 				4981D4972C7F5CBE002BE9DF /* Routable.swift in Sources */,
 			);
