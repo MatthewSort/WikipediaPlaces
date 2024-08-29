@@ -14,7 +14,7 @@ final class SearchPlacesViewModelTests: XCTestCase {
     private var mockUIApplication: MockUIApplication!
     private var placesService: MockPlacesService!
 
-    @MainActor override func setUp() {
+    override func setUp() {
         super.setUp()
         
         ServiceContainer.unregister(type: PlacesServing.self)

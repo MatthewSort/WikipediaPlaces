@@ -44,8 +44,3 @@ struct SearchPlacesView: View {
     SearchPlacesView()
 }
 
-
-#Preview {
-    SearchPlacesView()
-}
-
