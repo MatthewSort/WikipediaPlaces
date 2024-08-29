@@ -17,10 +17,14 @@ struct EndpointURLProvider: EndpointURLProvidable {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         components?.queryItems = route.queryItems
         
-        guard let endpointURL = components?.url else {
+        guard let endpointURL = components?.url, isValidURL(endpointURL) else {
             throw NetworkManagerError.invalidURL
         }
         
         return endpointURL
+    }
+    
+    private func isValidURL(_ url: URL) -> Bool {
+        return url.scheme != nil && url.host != nil
     }
 }

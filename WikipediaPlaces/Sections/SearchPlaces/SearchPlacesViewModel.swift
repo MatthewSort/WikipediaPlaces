@@ -1,6 +1,12 @@
+//
+//  SearchPlacesViewModel.swift
+//  WikipediaPlaces
+//
+//  Created by Mattia Capasso on 28/08/2024.
+//
+
 import SwiftUI
 
-@MainActor
 final class SearchPlacesViewModel: ObservableObject {
     @Published var places: [Place] = []
     @Published var query: String = ""
@@ -9,6 +15,11 @@ final class SearchPlacesViewModel: ObservableObject {
     @Published var alertContent: CustomAlertContent = .empty
 
     @Service private var placesService: PlacesServing
+    private var application: UIApplicationServing
+    
+    init(application: UIApplicationServing = UIApplication.shared) {
+        self.application = application
+    }
     
     var isSearchButtonEnabled: Bool {
         !query.isEmpty
@@ -18,6 +29,7 @@ final class SearchPlacesViewModel: ObservableObject {
         "Search \(query)"
     }
     
+    @MainActor
     func loadPlaces() async {
        isLoading = true
        
@@ -53,7 +65,7 @@ final class SearchPlacesViewModel: ObservableObject {
         
         CustomLog.log("URL: \(urlToOpen)")
         
-        UIApplication.shared.open(urlToOpen, options: [:]) { [weak self] success in
+        application.open(urlToOpen, options: [:]) { [weak self] success in
             if !success {
                 self?.retryOpenDetailsForPlace(
                     with: name,
@@ -64,7 +76,7 @@ final class SearchPlacesViewModel: ObservableObject {
     }
     
     private func retryToLoadPlaces() {
-        Task {
+        Task { @MainActor in
             await loadPlaces()
         }
     }

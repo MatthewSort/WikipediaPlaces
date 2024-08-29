@@ -7,21 +7,22 @@
 
 import Foundation
 
-protocol PlacesServing: Sendable {
+protocol PlacesServing: Actor, Sendable {
     func getPlaces() async -> Result<Places, NetworkManagerError>
 }
 
-final class PlacesService: PlacesServing {
-    private let networkManager: NetworkManager
+actor PlacesService: PlacesServing {
+    private let networkManager: NetworkManagerServing
     
-    init(networkManager: NetworkManager = .init()) {
+    init(networkManager: NetworkManagerServing = NetworkManager()) {
         self.networkManager = networkManager
     }
     
     func getPlaces() async -> Result<Places, NetworkManagerError> {
         let route: PlacesRoute = .getPlaces
         return await networkManager.sendRequest(
-            route: route,
+            route: route, 
+            cacheConfig: .active(),
             decodeTo: Places.self
         )
     }

@@ -9,10 +9,10 @@ import MapKit
 
 typealias Place = Places.PlaceDetail
 
-struct Places: Decodable, Sendable {
+struct Places: Codable, Sendable, Equatable {
     let places: [PlaceDetail]?
     
-    struct PlaceDetail: Decodable, Sendable {
+    struct PlaceDetail: Codable, Sendable, Equatable {
         let name: String?
         let latitude: CLLocationDegrees
         let longitude: CLLocationDegrees

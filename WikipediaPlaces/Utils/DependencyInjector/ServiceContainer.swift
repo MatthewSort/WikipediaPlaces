@@ -69,4 +69,12 @@ final class ServiceContainer: Sendable {
             }
         }
     }
+    
+    /// Removes a registered service from the container.
+    /// - Parameter type: The type of service to remove.
+    static func unregister<Service: Sendable>(type: Service.Type) {
+        let key = String(describing: type.self)
+        cache.removeValue(forKey: key)
+        generators.removeValue(forKey: key)
+    }
 }
