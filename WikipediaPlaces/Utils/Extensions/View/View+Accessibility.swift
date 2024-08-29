@@ -7,14 +7,21 @@
 
 import SwiftUI
 
+struct AccessibilityModifier: ViewModifier {
+    let type: AccessibilityType
+
+    func body(content: Content) -> some View {
+        content
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text(type.model.label))
+            .accessibilityValue(Text(type.model.value))
+            .accessibilityHint(Text(type.model.hint))
+            .accessibilityAddTraits(type.model.trait)
+    }
+}
+
 extension View {
     func setAccessibility(_ type: AccessibilityType) -> some View {
-        let model = type.model
-        return self
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text(model.label))
-            .accessibilityValue(Text(model.value))
-            .accessibilityHint(Text(model.hint))
-            .accessibilityAddTraits(model.traits)
+        self.modifier(AccessibilityModifier(type: type))
     }
 }

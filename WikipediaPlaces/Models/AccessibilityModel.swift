@@ -12,13 +12,12 @@ struct AccessibilityModel {
     let label: String
     var value = ""
     var hint = ""
-    var traits: AccessibilityTraits = []
+    var trait: AccessibilityTraits = .allowsDirectInteraction
 }
 
 enum AccessibilityType {
     case loading
     case searchButton(isEnabled: Bool)
-    case placeholder
     case placeRow(name: String)
     case alert(title: String, message: String?)
 
@@ -33,18 +32,13 @@ enum AccessibilityType {
             return AccessibilityModel(
                 label: "Search button",
                 hint: isEnabled ? "Tap to search for places." : "Search button is disabled.",
-                traits: isEnabled ? [.isButton] : []
-            )
-        case .placeholder:
-            return AccessibilityModel(
-                label: "Placeholder view",
-                hint: "Placeholder while loading places."
+                trait: isEnabled ? .isButton : .allowsDirectInteraction
             )
         case .placeRow(let name):
             return AccessibilityModel(
                 label: name,
                 hint: "Tap to view details.",
-                traits: [.isButton]
+                trait: .isButton
             )
         case .alert(let title, let message):
             return AccessibilityModel(

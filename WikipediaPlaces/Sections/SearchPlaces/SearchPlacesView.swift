@@ -15,10 +15,8 @@ struct SearchPlacesView: View {
             ZStack {
                 if viewModel.isLoading {
                     LoadingView()
-                        .setAccessibility(.loading)
                 } else {
                     PlacesList(viewModel: viewModel)
-                        .setAccessibility(.placeholder)
                 }
             }
             .navigationTitle("Search Places")
