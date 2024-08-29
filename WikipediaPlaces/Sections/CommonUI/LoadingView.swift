@@ -15,5 +15,6 @@ struct LoadingView: View {
                 .scaleEffect(1.5)
                 .padding()
         }
+        .setAccessibility(.loading)
     }
 }

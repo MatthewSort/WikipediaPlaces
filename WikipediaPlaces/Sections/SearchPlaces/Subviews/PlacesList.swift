@@ -12,13 +12,12 @@ struct PlacesList: View {
     
     var body: some View {
         List {
-            Section(header: Text("Best Spot")) {
-                if viewModel.isLoading && viewModel.places.isEmpty {
-                    PlaceholderView(count: 3, text: "Loading Places...")
-                } else {
-                    ForEach(viewModel.places, id: \.name) { place in
-                        placeRow(place)
-                    }
+            Section(header: Text("Best Spot")
+                .setAccessibility(.placeRow(name: "Best Spot"))
+            ) {
+                ForEach(viewModel.places, id: \.name) { place in
+                    placeRow(place)
+                        .setAccessibility(.placeRow(name: place.name ?? "Unknown Place"))
                 }
             }
         }

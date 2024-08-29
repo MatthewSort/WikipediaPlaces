@@ -23,5 +23,6 @@ struct SearchButton: View {
         }
         .padding()
         .disabled(!viewModel.isSearchButtonEnabled)
+        .setAccessibility(.searchButton(isEnabled: viewModel.isSearchButtonEnabled))
     }
 }
