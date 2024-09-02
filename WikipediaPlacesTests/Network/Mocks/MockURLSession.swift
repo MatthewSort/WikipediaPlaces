@@ -8,15 +8,15 @@
 import Foundation
 @testable import WikipediaPlaces
 
-struct MockURLSession: DataRequestable {
+actor MockURLSession: Actor,DataRequestable {
     private var dataResponse: (Data, URLResponse)?
     private var expectedRequest: URLRequest?
 
-    mutating func setResponse(data: Data, response: URLResponse) {
+    func setResponse(data: Data, response: URLResponse) {
         self.dataResponse = (data, response)
     }
 
-    mutating func setExpectedRequest(_ request: URLRequest) {
+    func setExpectedRequest(_ request: URLRequest) {
         self.expectedRequest = request
     }
 
@@ -24,11 +24,11 @@ struct MockURLSession: DataRequestable {
         if let expectedRequest {
             assert(request.url == expectedRequest.url, "Request URL does not match the expected URL.")
         }
-        
+
         guard let response = dataResponse else {
             throw NetworkManagerError.invalidResponse
         }
-        
+
         return response
     }
 }

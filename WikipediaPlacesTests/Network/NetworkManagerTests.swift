@@ -57,7 +57,7 @@ final class NetworkManagerTests: XCTestCase {
             return
         }
         
-        mockURLSession.setResponse(data: responseData, response: httpResponse)
+        await mockURLSession.setResponse(data: responseData, response: httpResponse)
 
         await mockCache.insert(
             expectedResponse,
@@ -102,10 +102,9 @@ final class NetworkManagerTests: XCTestCase {
             return
         }
         
-        mockURLSession.setExpectedRequest(URLRequest(url: url))
-        mockURLSession.setResponse(data: responseData, response: httpResponse)
+        await mockURLSession.setExpectedRequest(URLRequest(url: url))
+        await mockURLSession.setResponse(data: responseData, response: httpResponse)
 
-        let networkManager = NetworkManager(urlSession: mockURLSession)
         let result: Result<Places, NetworkManagerError> = await networkManager.sendRequest(
             route: route,
             cacheConfig: .none,
@@ -133,7 +132,7 @@ final class NetworkManagerTests: XCTestCase {
             return
         }
         
-        mockURLSession.setResponse(data: Data(), response: httpResponse)
+        await mockURLSession.setResponse(data: Data(), response: httpResponse)
 
         let result: Result<String, NetworkManagerError> = await networkManager.sendRequest(
             route: route,
@@ -144,7 +143,7 @@ final class NetworkManagerTests: XCTestCase {
         case .success:
             XCTFail("Expected failure, got success")
         case .failure(let error):
-            XCTAssertEqual(error, .invalidResponse)
+            XCTAssertEqual(error, .internalError)
         }
     }
 
@@ -162,7 +161,7 @@ final class NetworkManagerTests: XCTestCase {
             return
         }
         
-        mockURLSession.setResponse(data: invalidData, response: httpResponse)
+        await mockURLSession.setResponse(data: invalidData, response: httpResponse)
 
         let result: Result<String, NetworkManagerError> = await networkManager.sendRequest(
             route: route,
@@ -173,9 +172,7 @@ final class NetworkManagerTests: XCTestCase {
         case .success:
             XCTFail("Expected decoding error, got success")
         case .failure(let error):
-            XCTAssertEqual(error, .invalidResponse)
+            XCTAssertEqual(error, .decodingError)
         }
     }
 }
-
-

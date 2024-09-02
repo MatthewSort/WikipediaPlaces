@@ -9,14 +9,14 @@ import Foundation
 @testable import WikipediaPlaces
 
 actor MockCache: Cacheable {
-    private var store: [String: Any] = [:]
+    private var store: [String: AnySendableProtocol] = [:]
 
-    func insert<T: Sendable>(_ value: T, forKey key: String, timeToLiveInSeconds: Double) {
-        store[key] = value
+    func insert<T: Sendable>(_ value: T, forKey key: String, timeToLiveInSeconds: Double? = nil) {
+        store[key] = AnySendable(value)
     }
 
     func value<T: Sendable>(forKey key: String, as type: T.Type) -> T? {
-        return store[key] as? T
+        return (store[key] as? AnySendable<T>)?.unwrap(as: T.self)
     }
 
     func removeValue(forKey key: String) {

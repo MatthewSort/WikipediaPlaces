@@ -84,7 +84,7 @@ final class SearchPlacesViewModelTests: XCTestCase {
         let name = "Test Place"
         guard let placeName = name.addingPercentEncoding(withAllowedCharacters: .alphanumerics),
               let schemaUrl = Configuration.infoDictionaryKey(.SchemaUrlWikipedia).value,
-              let expectedURL = URL(string: schemaUrl + placeName) else {
+              URL(string: schemaUrl + placeName) != nil else {
             XCTFail("The URL is invalid or the place name has invalid character")
             return
         }

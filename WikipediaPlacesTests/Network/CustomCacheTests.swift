@@ -1,3 +1,10 @@
+//
+//  CustomCacheTests.swift
+//  WikipediaPlacesTests
+//
+//  Created by Mattia Capasso on 29/08/2024.
+//
+
 import XCTest
 @testable import WikipediaPlaces
 
@@ -58,7 +65,6 @@ final class CustomCacheTests: XCTestCase {
         
         await cache.insert(value1, forKey: key1)
         await cache.insert(value2, forKey: key2)
-        
         await cache.resetCache()
         
         let retrievedValue1: String? = await cache.value(forKey: key1, as: String.self)
